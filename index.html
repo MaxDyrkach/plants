@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poisonous Plants</title>
+    <script type="text/javascript">
+        function toggleText(plant) {
+            const extraText = document.querySelector(`.${plant} .extra-text`);
+            const btn = document.querySelector(`.${plant} .show-more`);
+            if (extraText.style.display === 'none' || extraText.style.display === '') {
+                extraText.style.display = 'block';
+                btn.textContent = 'Show less';
+            } else {
+                extraText.style.display = 'none';
+                btn.textContent = 'Show more';
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #2E2E2E;
+            color: #F5DEB3;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            margin-bottom: 40px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+        }
+        .text {
+            display: inline-block;
+            vertical-align: top;
+            max-width: 600px;
+        }
+        p, span {
+            line-height: 1.6;
+        }
+        .extra-text {
+            display: none;
+        }
+        .show-more {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .show-more:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Plant 1: Deadly Nightshade -->
+    <div class="container deadly-nightshade">
+        <img src="nightshade.jpg" alt="Deadly Nightshade">
+        <div class="text">
+            <p><strong>Deadly Nightshade (Atropa belladonna)</strong> is one of the most toxic plants found in the Western Hemisphere. All parts of the plant contain tropane alkaloids that can cause delirium and hallucinations.</p>
+            <button class="show-more" onclick="toggleText('deadly-nightshade')">Show more</button>
+            <p class="extra-text">Even small amounts can cause death, and throughout history, it was used in poisons and cosmetics. The berries, which look appetizing, are particularly dangerous to children.</p>
+        </div>
+    </div>
+
+    <!-- Plant 2: Poison Ivy -->
+    <div class="container poison-ivy">
+        <img src="poison-ivy.jpg" alt="Poison Ivy">
+        <div class="text">
+            <p><strong>Poison Ivy (Toxicodendron radicans)</strong> is well known for causing an itchy, irritating, and sometimes painful rash. The plant contains urushiol, an oily compound that triggers an allergic reaction.</p>
+            <button class="show-more" onclick="toggleText('poison-ivy')">Show more</button>
+            <p class="extra-text">Poison Ivy grows as a vine or shrub and can be found across North America. The severity of the reaction varies from person to person, but contact should be avoided at all costs.</p>
+        </div>
+    </div>
+
+    <!-- Plant 3: Oleander -->
+    <div class="container oleander">
+        <img src="oleander.jpg" alt="Oleander">
+        <div class="text">
+            <p><strong>Oleander (Nerium oleander)</strong> is a beautiful but extremely poisonous plant. It is widely cultivated for ornamental purposes but is toxic to humans, pets, and even livestock.</p>
+            <button class="show-more" onclick="toggleText('oleander')">Show more</button>
+            <p class="extra-text">Ingestion of any part of the plant can result in serious health issues, including heart problems, nausea, vomiting, and, in severe cases, death. Even inhaling smoke from burning oleander can be harmful.</p>
+        </div>
+    </div>
+
+</body>
+</html>
 
