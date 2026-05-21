@@ -16,17 +16,16 @@
                 btn.textContent = 'Show more';
             }
         }
-    </script>
-    <script type="text/javascript">
+   <script type="text/javascript">
     // Duration in milliseconds to wait while the Kameleoon application file is loaded
-    var kameleoonLoadingTimeout = 1000;
+    var kameleoonLoadingTimeout = 750;
 
     window.kameleoonQueue = window.kameleoonQueue || [];
-    window.kameleoonStartLoadTime = new Date().getTime();
+    window.kameleoonStartLoadTime = Date.now();
     if (! document.getElementById("kameleoonLoadingStyleSheet") && ! window.kameleoonDisplayPageTimeOut)
     {
         var kameleoonS = document.getElementsByTagName("script")[0];
-        var kameleoonCc = "* { visibility: hidden !important; background-image: none !important; }";
+        var kameleoonCc = "html::after { content: ''; position: fixed; inset: 0; background: #fff; z-index: 2147483647; }";
         var kameleoonStn = document.createElement("style");
         kameleoonStn.type = "text/css";
         kameleoonStn.id = "kameleoonLoadingStyleSheet";
@@ -53,7 +52,7 @@
         window.kameleoonDisplayPageTimeOut = window.setTimeout(window.kameleoonDisplayPage, kameleoonLoadingTimeout);
     }
 </script>
-<script type="text/javascript" src="//uh72bsbydc.kameleoon.io/kameleoon.js" async="true" fetchpriority="high"></script>
+<script type="text/javascript" src="//uh72bsbydc.kameleoon.io/engine.js" async="true" fetchpriority="high"></script>
     <style>
         body {
             background-color: #013220;
